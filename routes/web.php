@@ -1,5 +1,4 @@
 <?php
-
 Route::group(['middleware' => 'language'], function () {
     Route::group(['middleware' => 'auth'], function () {
         Route::group(['prefix' => 'uploads'], function () {

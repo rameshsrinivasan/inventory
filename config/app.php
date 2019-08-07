@@ -120,7 +120,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => env('APP_LOG', 'daily'),
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
@@ -206,6 +206,8 @@ return [
         Nwidart\Modules\LaravelModulesServiceProvider::class,
         Sofa\Eloquence\ServiceProvider::class,
         Plank\Mediable\MediableServiceProvider::class,
+
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
 
     ],
 
