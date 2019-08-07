@@ -208,6 +208,7 @@ return [
         Plank\Mediable\MediableServiceProvider::class,
 
         Arcanedev\LogViewer\LogViewerServiceProvider::class,
+        BeyondCode\SelfDiagnosis\SelfDiagnosisServiceProvider::class,
 
     ],
 
