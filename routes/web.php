@@ -267,3 +267,15 @@ Route::group(['middleware' => 'language'], function () {
         });
     });
 });
+
+Route::get('/clear-cache', function () {
+    
+    Artisan::call('cache:clear');
+    
+    Artisan::call('config:clear');
+    Artisan::call('route:clear');
+
+    Artisan::call('config:cache');
+    Artisan::call('route:cache');
+    return "Cache is cleared";
+});
