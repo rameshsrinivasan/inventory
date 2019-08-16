@@ -20,7 +20,7 @@ class CreateBillsTable extends Migration
             $table->string('bill_status_code');
             $table->date('billed_at');
             $table->date('due_at');
-            $table->double('amount', 15, 4);
+            $table->double('amount', 15, 2);
             $table->string('currency_code');
             $table->double('currency_rate', 15, 8);
             $table->integer('vendor_id');

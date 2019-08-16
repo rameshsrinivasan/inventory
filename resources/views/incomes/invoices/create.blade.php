@@ -63,8 +63,8 @@
                         @if(old('item'))
                             @foreach(old('item') as $old_item)
                                 @php $item = (object) $old_item; @endphp
+                                @include('incomes.invoices.item-prefilled')
                                 {{-- @include('incomes.invoices.item') --}}
-
                                 @php $item_row++; @endphp
                             @endforeach
                         @else

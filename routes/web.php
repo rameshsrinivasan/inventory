@@ -238,6 +238,16 @@ Route::group(['middleware' => 'language'], function () {
     });
 
     Route::group(['middleware' => 'guest'], function () {
+        Route::get('/clear-cache', function () {
+            Artisan::call('cache:clear');
+            
+            Artisan::call('config:clear');
+            Artisan::call('route:clear');
+
+            Artisan::call('config:cache');
+            Artisan::call('route:cache');
+            return "Cache is cleared";
+        });
         Route::group(['prefix' => 'auth'], function () {
             Route::get('login', 'Auth\Login@create')->name('login');
             Route::post('login', 'Auth\Login@store');
@@ -266,16 +276,4 @@ Route::group(['middleware' => 'language'], function () {
             });
         });
     });
-});
-
-Route::get('/clear-cache', function () {
-    
-    Artisan::call('cache:clear');
-    
-    Artisan::call('config:clear');
-    Artisan::call('route:clear');
-
-    Artisan::call('config:cache');
-    Artisan::call('route:cache');
-    return "Cache is cleared";
 });
